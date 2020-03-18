@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+
+.grid {
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-auto-columns: 1fr;
+}
+
+@tailwind utilities;
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    animation: spin 3s linear;
+    animation-iteration-count: infinite;
+}
