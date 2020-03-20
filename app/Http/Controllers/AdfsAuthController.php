@@ -17,8 +17,14 @@ class AdfsAuthController extends Controller
             ->redirect();
     }
 
-    public function callback()
+    public function callback(Request $request)
     {
+        if ($request->input('error') === 'access_denied') {
+            return response()
+                ->view('403')
+                ->setStatusCode(403);
+        }
+
         $adfsUser = Socialite::driver('adfs')->user();
 
         $user = User::firstOrCreate([
