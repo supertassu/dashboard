@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Auth\AdfsSocialiteDriver;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -35,10 +36,11 @@ class AdfsAuthController extends Controller
     {
         $this->guard()->logout();
         $request->session()->invalidate();
-        return redirect('/');
+        return redirect(AdfsSocialiteDriver::getBaseUrl() . '/ls/?wa=wsignout1.0');
     }
 
     private function guard()
     {
         return Auth::guard();
-    }}
+    }
+}

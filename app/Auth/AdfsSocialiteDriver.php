@@ -12,7 +12,7 @@ class AdfsSocialiteDriver extends AbstractProvider implements ProviderInterface
     protected $scopes = ['openid', 'profile', 'email'];
     protected $scopeSeparator = ' ';
 
-    private function getBaseUrl(): string
+    public static function getBaseUrl(): string
     {
         return env('ADFS_BASE_URL', 'https://fs.majava.org/adfs');
     }

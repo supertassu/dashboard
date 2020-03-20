@@ -23,6 +23,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/google_auth', 'GoogleAuthController@redirect');
     Route::get('/google_auth/callback', 'GoogleAuthController@callback')
         ->name('google_auth.callback');
+
+    Route::post('/logout', 'AdfsAuthController@logout')
+        ->name('logout');
 });
 
 // adfs

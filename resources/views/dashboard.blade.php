@@ -24,7 +24,17 @@
 
 <div class="border-t-8 border-pink-700 p-4 h-full flex flex-col">
     <div class="mt-2 mb-6 w-full">
-        <a href="{{ url('/') }}" class="bg-pink-700 p-2 hover:underline">{{ config('app.name') }}</a>
+        <div class="flex justify-between">
+            <a href="{{ url('/') }}" class="bg-pink-700 p-2 hover:underline">{{ config('app.name') }}</a>
+
+            <div>
+                Logged in as {{ Auth::user()->name }}.
+                <form method="post" action="{{ route('logout') }}" class="inline-block">
+                    @csrf
+                    <button class="underline hover:no-underline">Logout?</button>
+                </form>
+            </div>
+        </div>
     </div>
 
     <div class="grid w-full flex-grow" id="app">
