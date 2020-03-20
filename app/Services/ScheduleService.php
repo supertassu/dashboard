@@ -19,7 +19,7 @@ class ScheduleService
                 'defaultTimeZone' => 'Europe/Helsinki',
             ]);
 
-            $events = $ical->eventsFromRange(now()->format('Y-m-d'), now()->addDay()->format('Y-m-d'));
+            $events = $ical->eventsFromRange(now()->format('Y-m-d'), now()->addDays(2)->format('Y-m-d'));
             $schedule = [];
 
             foreach ($events as $event) {

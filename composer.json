@@ -9,13 +9,15 @@
     "license": "MIT",
     "require": {
         "php": "^7.4",
+        "ext-json": "*",
         "fideloper/proxy": "^4.0",
+        "firebase/php-jwt": "^5.1",
         "google/apiclient": "^2.4",
         "google/apiclient-services": "^0.127.0",
         "guzzlehttp/guzzle": "^6.5",
         "johngrogg/ics-parser": "^2.1",
-        "laravel/airlock": "^1.0",
         "laravel/framework": "^7.1",
+        "laravel/socialite": "^4.3",
         "laravel/tinker": "^2.0",
         "pusher/pusher-php-server": "^4.1",
         "spatie/laravel-blade-javascript": "^2.4"

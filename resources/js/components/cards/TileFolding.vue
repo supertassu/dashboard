@@ -4,8 +4,8 @@
             Failed to retrieve folding data <span class="text-red-500">;(</span>
         </div>
 
-        <div v-else-if="loading" class="flex justify-center items-center h-full">
-            <span class="spinner">spinner</span>
+        <div v-else-if="loading">
+            Still trying to load folding data <span class="text-purple-500 spinner">:I</span>
         </div>
 
         <div v-else class="flex flex-col justify-between h-full">

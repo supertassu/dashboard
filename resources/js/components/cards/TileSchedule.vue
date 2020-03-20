@@ -6,13 +6,13 @@
                     {{ dayName }}
                 </span>
                 <div>
-                    <div v-for="item in day" class="mb-1">
-                        <div>{{ item.title }}</div>
-                        <div class="text-gray-300 text-sm">
-                            <span class="text-pink-300">
-                                »
-                            </span>
-                            {{ formatDate(item.starts_at) }}&ndash;{{ formatDate(item.ends_at) }} &middot; {{ item.teacher }}
+                    <div v-for="item in day" class="mb-1 text-gray-300 text-sm flex justify-between">
+                        <div class="text-white text-base">{{ item.title }}</div>
+                        <div class="flex justify-end text-right">
+                            <div>{{ item.teacher }}</div>
+                            <div>
+                                &nbsp;&middot;&nbsp;{{ formatDate(item.starts_at) }}&ndash;{{ formatDate(item.ends_at) }}
+                            </div>
                         </div>
                     </div>
                 </div>
